@@ -7,8 +7,6 @@ import java.util.Set;
 
 public class EventBus {
 	
-	private static final String TAG = EventBus.class.getName();
-
 	private static EventBus instance = null;
 	
 	private HashMap<String, HashMap<Object, String>> eventMap = null;
@@ -51,7 +49,6 @@ public class EventBus {
 				Method  method = c.getDeclaredMethod (callback);
 				method.invoke (objReference);
 			} catch (Exception e) {
-				//Log.e(TAG, "Error while processing callback on event. EventName="+eventName+". Class="+objReference.getClass().getName()+". Error="+e.getMessage(), e);
 				//Log some error here
 			}
 		}
