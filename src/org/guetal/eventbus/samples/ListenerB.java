@@ -12,5 +12,7 @@ public class ListenerB {
 		System.out.println("B");
 	}
 
-
+	public void unsubscribe() {
+		EventBus.getInstance().unsubscribeEvent(Broadcaster.event, this);
+	}
 }

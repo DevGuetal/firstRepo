@@ -6,10 +6,22 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {	
-		new ListenerA().subscribe();
-		new ListenerB().subscribe();
+		ListenerA listenerA = new ListenerA();
+		listenerA.subscribe();
 		
-		new Broadcaster().broadcast();
+		ListenerB listenerB = new ListenerB();
+		listenerB.subscribe();
+		
+		Broadcaster broadcaster = new Broadcaster();
+		broadcaster.broadcast();
+		
+		listenerB.unsubscribe();
+		
+		broadcaster.broadcast();
+		
+		listenerA.unsubscribe();
+		
+		broadcaster.broadcast();
 	}
 
 }

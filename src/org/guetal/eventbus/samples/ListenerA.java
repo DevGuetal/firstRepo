@@ -11,5 +11,8 @@ public class ListenerA {
 	public void onBroadcast() {
 		System.out.println("A");
 	}
-
+	
+	public void unsubscribe() {
+		EventBus.getInstance().unsubscribeEvent(Broadcaster.event, this);
+	}
 }
